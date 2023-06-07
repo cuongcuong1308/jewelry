@@ -1,0 +1,142 @@
+
+
+.container .box
+{
+    position: relative;
+    width: calc(600px - 30px);
+    height: calc(400px - 30px);
+    background: #000;
+    float: left;
+    margin: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .8);
+}
+.container .box:before
+{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-top: 2px solid #FE980F;
+    border-bottom: 2px solid #FE980F;
+    transition: 0.5s;
+    transform: scaleX(0);
+    opacity: 0;
+    z-index: 1;    
+}
+.container .box:hover:before
+{
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.container .box::after
+{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-left: 2px solid #FE980F;
+    border-right: 2px solid #FE980F;
+    transition: 0.5s;
+    transform: scaleY(0);
+    opacity: 0;
+    z-index: 1;
+}
+.container .box:hover::after
+{
+    transform: scaleY(1);
+    opacity: 1;
+}
+.container .box .imgBox
+{
+    position: relative;
+}
+.container .box .imgBox img
+{
+    width: 112%;
+    transition: 0.5s;
+}
+.container .box:hover .imgBox img
+{
+    opacity: .2;
+    transform: scale(1.2);
+}
+.container .box .content
+{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.container .box .content h2
+{
+    margin: 0 0 10px;
+    padding: 0;
+    color: #fff;
+    transition: 0.5s;
+    transform: translateY(-50px);
+    opacity: 0;
+    visibility: hidden;
+}    
+.container .box .content p
+{
+    width: 25%;
+    margin: 0;
+    padding: 0;
+    color: #FE980F;
+    transition: 0.5s;
+    transform: translateY(50px);
+    opacity: 0;
+    visibility: hidden;
+    border: 1px solid #FE980F;
+    display: inline-block;
+}   
+.container .box:hover .content h2,
+.container .box:hover .content p 
+{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+    transition-delay: 0.2s;
+}
+
+.overview-content>h2
+{
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    position: relative;
+    text-transform: uppercase;
+}
+.overview-content>h2::before
+{
+    background-color: #f4f4f4;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+.overview-content>h2::after
+{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 380px;
+    background: #FE980F;
+    height: 2px;
+    width: 258px;
+}
+
